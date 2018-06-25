@@ -1,0 +1,124 @@
+    <!doctype html>
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Registry</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="/public/cssRegistry/css/font-awesome.css" type="text/css"/>
+        <!--<link rel="stylesheet" href="/public/cssRegistry/css/font-awesome.min.css" type="text/css"/>-->
+        <link rel="stylesheet" href="/public/cssRegistry/style.css" type="text/css"/>
+        <script>
+            document.createElement("header");
+            document.createElement("nav");
+            document.createElement("section");
+            document.createElement("footer");
+        </script>
+    </head>
+    <body>
+    <header>
+
+        <img src="/public/img/5_White_logo_on_black_176x71.png"/>
+        <nav>
+            <ol>
+                <li><a href="/public/adminPanel.html"><i class="fa fa">Admin</i> </a></li>
+                <li><a href="#"><i class="fa "></i>Catalog</a></li>
+
+            </ol>
+        </nav>
+    </header>
+
+    <h4>email</h4><br>
+    <input type="text" id="email">
+    <h4>password</h4><br>
+    <input type="text" id="password">
+    <h4>role:</h4><br>
+    <input type="text" id="role">
+
+    <div id="content">
+        <button
+                id="changeBackround">Change</button>
+    </div>
+
+    <li><a href="index.html"><i class="fa"></i>login</a></li>
+
+        <div class="social">
+        <i class="fa fa-vk" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-google-plus" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <script>
+
+        $.ajax({
+            url:"http://localhost:8080/public/create",
+            type:"GET",
+            contentType:"application/json",
+            headers: {
+                "Authorize":"Bearer " + localStorage.getItem("token")
+            },
+            success:function(data){
+                for(var i =0;i<data.length;i++){
+                    $("#listPerson").append("<li>"+data[i].role+" "+data[i].password+" "+data[i].email+
+                        "</li>");
+                }
+
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+        $("#changeBackround").click(function(){
+            var person = {
+                email:$("#email").val(),
+                password:$("#password").val(),
+                role:$("#role").val()
+            };
+            $.ajax({
+                url:"http://localhost:8080/public/create",
+                type:"POST",
+                contentType:"application/json",
+                data:JSON.stringify(person),
+                success:function(data){
+                    alert("SUCCESS");
+                    alert(data);                     localStorage.setItem('token', data);
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        });
+
+        $.ajax({
+
+            type: "POST",
+
+        url: "http://localhost:8080/public/create",
+
+        dataType: "json",
+
+        async: false,
+
+        success: function(data){
+
+            // получения данных: song1, song2
+
+        }
+
+        });
+
+
+    </script>
+
+    <footer>
+
+    </footer>
+
+
+
+    </body>
+    </html>

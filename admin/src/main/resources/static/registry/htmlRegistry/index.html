@@ -1,0 +1,104 @@
+    <!doctype html>
+    <html lang="en" >
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Registry</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="/public/cssRegistry/style.css" type="text/css"/>
+        <link rel="stylesheet" href="/public/cssRegistry/css/font-awesome.css" type="text/css"/>
+        <script>
+            document.createElement("header");
+            document.createElement("nav");
+            document.createElement("section");
+            document.createElement("footer");
+        </script>
+    </head>
+    <body>
+    <header>
+
+        <img src="/public/img/111.jpg"/>
+        <nav>
+            <ol>
+                <li><a href="/public/adminPanel.html"><i class="fa fa">Admin</i> </a></li>
+
+            </ol>
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+        <img src="/public/img/icons8-контакты-50.png"/>
+        <form>
+            <div class="dws-input">
+                <input type="text" id="role" placeholder="Enter login"/>
+            </div>
+            <div class="dws-input">
+                <input type="password" id="password" placeholder="enter password"/>
+            </div>
+            <div class="dws-input">
+                <input type="email" id="email" placeholder="enter email"/>
+            </div>
+            <input class="dws-submit" type="submit" name="submit" value="to come in"/>
+            <br/>
+            <a href="#">recover password</a>
+        </form>
+        <div class="social">
+        <i class="fa fa-vk" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-google-plus" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <script>
+
+        $.ajax({
+            url:"http://localhost:8080/public/create",
+            type:"GET",
+            contentType:"application/json",
+            success:function(data){
+                for(var i =0;i<data.length;i++){
+                    $("#listPerson").append("<li>"+data[i].role+" "+data[i].password+" "+data[i].email+
+                        "</li>");
+                }
+
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+        $("#changeBackround").click(function(){
+            var person = {
+                role:$("#role").val(),
+                password:$("#password").val(),
+                email:$("#email").val()
+            };
+            $.ajax({
+                url:"http://localhost:8080/public/create",
+                type:"POST",
+                contentType:"application/json",
+                data:JSON.stringify(person),
+                success:function(data){
+                    $("#listPerson").append("<li>"+data.role+" "+data.password+" "+data.email+
+                        "</li>");
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        });
+
+    </script>
+
+    <footer>
+
+    </footer>
+
+
+
+    </body>
+    </html>

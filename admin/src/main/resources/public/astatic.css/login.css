@@ -1,0 +1,12 @@
+body{
+    background-color: #1a394f;
+
+}
+nav>ul>li>a{
+    display: block;
+    padding: 15px 30px 15px 40px;
+    font-size: 17px;
+    background: #000000;
+    color:chartreuse;
+    text-decoration: none;
+}

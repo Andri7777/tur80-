@@ -1,0 +1,41 @@
+#col1{
+    width: 400px;
+}
+#col2{
+    width: 400px;
+}
+#col3{
+    width: 400px;
+}
+tr{
+    align-items: center;
+}
+
+
+#content3{
+
+    height: 500px;
+    background: aqua;
+
+}
+
+.main{
+    max-width: 1500px;
+    min-width: 500px;
+    margin: 0 auto;
+
+}
+.block{
+    float: left;
+    width: 65%;
+    background: #eeeeee;
+    border: aliceblue thin solid;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 6px;
+}
+.rot{
+    float: left;
+    width: 33%;
+}
+

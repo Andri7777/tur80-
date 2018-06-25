@@ -1,0 +1,118 @@
+header,nav,section,footer,aside{
+    display: block;
+}
+
+*{
+    margin: 0 ;
+    padding: 0 ;
+}
+header{
+    width: 100%;
+    height: 75px;
+    background: linear-gradient(to top right,black 90%,white);
+}
+nav {
+    float: right;
+    margin-right: 15px;
+}
+nav>ul>li{
+    float: left;
+    color: azure;
+    list-style: none;
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+nav>ul>li:hover{
+    color: bisque;
+}
+nav>ul>li>a{
+    display: block;
+    padding: 15px 30px 15px 40px;
+    font-size: 17px;
+    background: #000000;
+    color:chartreuse;
+    text-decoration: none;
+}
+#picture{
+    width: 100%;
+    height: 700px;
+    background-image: url(../img/SANGIACOMO-LAMPO-SIMONI-ARREDA-8.jpg);
+}
+footer{
+    width: 100%;
+    height: 75px;
+    background: linear-gradient(to top right,silver 90%,white);
+}
+#content{
+
+    height:500px;
+
+}
+#leftBar {
+    float: left;
+    height: auto;
+    width: auto;
+    border: 2px solid white;
+    margin-top: 100px;
+
+}
+#leftBar>ol>li {
+    list-style: none;
+    color: azure;
+    margin: 10px;
+}
+/*#nav1>li{*/
+    /*float: left;*/
+    /*position: relative;*/
+    /*list-style: none;*/
+    /*background: #6ee9fd;*/
+    /*width: 190px;*/
+/*}*/
+/*#nav1 a{*/
+    /*text-decoration: none;*/
+    /*display: block;*/
+    /*padding: 35px 65px;*/
+    /*color: #1a394f;*/
+/*}*/
+/*#active a, #nav1 li:hover >a{*/
+    /*background: coral;*/
+/*}*/
+/*#nav1 ul{*/
+    /*visibility: hidden;*/
+    /*padding: 0;*/
+    /*position: absolute;*/
+
+/*}*/
+/*#nav1 li:hover >ul{*/
+    /*visibility: hidden;*/
+    /*position: relative;*/
+/*}*/
+/*#nav1 ul a{*/
+    /*padding: 18px 65px;*/
+/*}*/
+/*#nav1 ul li:hover{*/
+    /*background: #1a394f;*/
+/*}*/
+/*#nav1 li:first-child:hover >li{*/
+    /*left: 0;*/
+
+/*}*/
+/*#nav1 >li{*/
+    /*border-right: 2px solid #6ee9fd;*/
+/*}*/
+/*#nav1 >li:last-child{*/
+    /*border-right: none;*/
+
+/*}*/
+/*#nav1 >li ul li{*/
+    /*border-left: 2px solid #1a394f ;*/
+    /*border-right: 2px solid #6ee9fd;*/
+/*}*/
+/*#nav1 li:first-child ul li, #nav1 li:first-child ul{*/
+    /*border-left: none;*/
+/*}*/
+/*#nav1 li:last-child ul li,#nav1 li:first-child ul{*/
+    /*border-left: none;*/
+/*}*/
